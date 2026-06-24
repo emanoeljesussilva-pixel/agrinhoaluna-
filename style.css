@@ -1,0 +1,206 @@
+/* Configurações Gerais e Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2e7d32; /* Verde Sustentável */
+    --secondary-color: #f57c00; /* Laranja de destaque */
+    --dark-color: #212121;
+    --light-color: #ffffff;
+    --bg-light: #f9f9f9;
+    --text-color: #424242;
+    --font-stack: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+.section-padding { padding: 60px 0; }
+.bg-light { background-color: var(--bg-light); }
+
+/* Cabeçalho */
+.main-header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.logo h1 span { color: var(--primary-color); }
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover { color: var(--primary-color); }
+
+.btn-accessibility {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    color: var(--light-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background-color: #1b5e20; }
+
+/* Grid de Impactos */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card h3 { margin-bottom: 15px; color: var(--dark-color); }
+
+/* Seção de Soluções */
+.solutions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.solution-item {
+    background: var(--light-color);
+    padding: 20px;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.solution-item h3 { color: var(--secondary-color); margin-bottom: 5px; }
+
+/* Rodapé */
+.main-footer {
+    background-color: var(--dark-color);
+    color: #9e9e9e;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* CLASSES DE ALTO CONTRASTE (Acessibilidade) */
+body.high-contrast {
+    background: #000 !important;
+    color: #fff !important;
+}
+body.high-contrast .main-header, 
+body.high-contrast .card, 
+body.high-contrast .solution-item,
+body.high-contrast .bg-light {
+    background: #111 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+body.high-contrast a, 
+body.high-contrast h1, 
+body.high-contrast h2, 
+body.high-contrast h3 {
+    color: #ffff00 !important; /* Amarelo para links e títulos no alto contraste */
+}
+body.high-contrast .btn-primary {
+    background: #ffff00 !important;
+    color: #000 !important;
+}
+
+/* Responsividade Básica via Media Query */
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h2 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+}
